@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/q_graph"
+    app:startDestination="@id/setQuestionSubjectTopicFragment"
+    app:defaultNavHost="true">
+
+    <fragment
+        android:id="@+id/setQuestionSubjectTopicFragment"
+        android:name="com.example.gadseduca.forquestions.SetQuestionSubjectTopicFragment"
+        android:label="fragment_set_question_subject_topic"
+        tools:layout="@layout/fragment_set_question_subject_topic" >
+        <action
+            android:id="@+id/action_setQuestionSubjectTopicFragment_to_setQuestioDetailsFragment"
+            app:destination="@id/setQuestioDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setQuestioDetailsFragment"
+        android:name="com.example.gadseduca.forquestions.SetQuestioDetailsFragment"
+        android:label="fragment_set_questio_details"
+        tools:layout="@layout/fragment_set_questio_details" >
+        <action
+            android:id="@+id/action_setQuestioDetailsFragment_to_confirmQuestionDetailFragment"
+            app:destination="@id/confirmQuestionDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmQuestionDetailFragment"
+        android:name="com.example.gadseduca.forquestions.ConfirmQuestionDetailFragment"
+        android:label="fragment_confirm_question_detail"
+        tools:layout="@layout/fragment_confirm_question_detail" >
+        <action
+            android:id="@+id/action_confirmQuestionDetailFragment_to_questActivity2"
+            app:destination="@id/questActivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/questActivity2"
+        android:name="com.example.gadseduca.QuestActivity"
+        android:label="activity_quest"
+        tools:layout="@layout/activity_quest" />
+</navigation>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment"
+    app:defaultNavHost="true">
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.gadseduca.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_reg1Fragment"
+            app:destination="@id/reg1Fragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.gadseduca.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_questActivity"
+            app:destination="@id/questActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/reg1Fragment"
+        android:name="com.example.gadseduca.registerlogin.forregistration.reg1Fragment"
+        android:label="fragment_reg1"
+        tools:layout="@layout/fragment_reg1" >
+        <action
+            android:id="@+id/action_reg1Fragment_to_reg2Fragment"
+            app:destination="@id/reg2Fragment" />
+        <action
+            android:id="@+id/action_reg1Fragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reg2Fragment"
+        android:name="com.example.gadseduca.registerlogin.forregistration.reg2Fragment"
+        android:label="fragment_reg2"
+        tools:layout="@layout/fragment_reg2" >
+        <action
+            android:id="@+id/action_reg2Fragment_to_imageLoadFragment"
+            app:destination="@id/imageLoadFragment" />
+        <action
+            android:id="@+id/action_reg2Fragment_to_reg1Fragment"
+            app:destination="@id/reg1Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageLoadFragment"
+        android:name="com.example.gadseduca.registerlogin.forregistration.ImageLoadFragment"
+        android:label="fragment_image_load"
+        tools:layout="@layout/fragment_image_load" >
+        <action
+            android:id="@+id/action_imageLoadFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment" />
+        <action
+            android:id="@+id/action_imageLoadFragment_to_reg2Fragment"
+            app:destination="@id/reg2Fragment" />
+    </fragment>
+    <activity
+        android:id="@+id/questActivity"
+        android:name="com.example.gadseduca.QuestActivity"
+        android:label="activity_quest"
+        tools:layout="@layout/activity_quest" />
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="com.example.gadseduca.registerlogin.forregistration.ConfirmFragment"
+        android:label="fragment_confirm"
+        tools:layout="@layout/fragment_confirm" >
+        <action
+            android:id="@+id/action_confirmFragment_to_questActivity"
+            app:destination="@id/questActivity" />
+    </fragment>
+</navigation>
